@@ -7,3 +7,7 @@ Flow
   --> Displays all hotlines within that topic
   --> Asks user if they want to view the menu or exit
   --> Cycles back through or exits
+
+Structure
+  --> Topic
+    --> List of hotlines
