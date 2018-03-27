@@ -1,5 +1,7 @@
-require "life_ring/version"
+require_relative "./life_ring/version"
 
 module LifeRing
-  LifeRing::CLI.new.call
+  #code here
 end
+
+require_relative ""

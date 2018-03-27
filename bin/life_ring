@@ -1,3 +1,4 @@
 #!/usr/bin/env ruby
+require_relative ".lib/life_ring.rb"
 
-puts "Is this working?"
+LifeRing::CLI.new.call
