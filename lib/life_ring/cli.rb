@@ -1,4 +1,4 @@
-class CLI
+class LifeRing::CLI
   def call
     puts "############ - Life Ring - ############"
     puts " "

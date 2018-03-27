@@ -4,4 +4,4 @@ module LifeRing
   #code here
 end
 
-require_relative ""
+require_relative "./life_ring/cli"
