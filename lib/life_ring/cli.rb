@@ -15,6 +15,7 @@ class LifeRing::CLI
     puts " "
     puts " What can I help you with today?"
     topics
+    menu
   end
 
   def topics
@@ -30,8 +31,12 @@ class LifeRing::CLI
     9. Crisis #'s for Any Age
     10. Crisis Pregnancy
 
-    OR type 'more' for more
-
     DOC
   end
+
+  def  menu
+    puts "What can I help you with today? Please enter a number 1-10 or enter 'more' for more options:"
+    puts " "
+  end
+
 end
