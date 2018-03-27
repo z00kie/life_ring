@@ -1,7 +1,19 @@
 class LifeRing::CLI
   def call
-    puts "############ - Life Ring - ############"
+    puts " "
+    puts "#       #####   #####   #####"
+    puts "#         #     #       #    "
+    puts "#         #     ####    #### "
+    puts "#         #     #       #    "
+    puts "######  #####   #       #####"
+    puts " "
+    puts "####    #####  ##   #  #### "
+    puts "#   #     #    # #  #  #    "
+    puts "####      #    #  # #  #  ##"
+    puts "#   #     #    #   ##  #   #"
+    puts "#    #  #####  #    #  #####"
     puts " "
     puts "What can I help you with today?"
+    puts " "
   end
 end
