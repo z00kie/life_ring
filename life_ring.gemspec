@@ -9,9 +9,9 @@ Gem::Specification.new do |spec|
   spec.authors       = ["Emmy White"]
   spec.email         = ["emmalinerosewhite@gmail.com"]
 
-  spec.summary       = %q{TODO: Write a short summary, because RubyGems requires one.}
-  spec.description   = %q{TODO: Write a longer description or delete this line.}
-  spec.homepage      = "TODO: Put your gem's website or public repo URL here."
+  spec.summary       = %q{A quick-access database of US-based hotlines for things such as addiction or depression.}
+  spec.description   = %q{Life Ring conveniently places help at your fingertips for you to access when you need it most. Pulled from [Please Live](http://www.pleaselive.org/hotlines), you can find and receive help for a wide range of problems in a matter of seconds.}
+  spec.homepage      = "[https://github.com/z00kie/life_ring]"
   spec.license       = "MIT"
 
   # Prevent pushing this gem to RubyGems.org. To allow pushes either set the 'allowed_push_host'
