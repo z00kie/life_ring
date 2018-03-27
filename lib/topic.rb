@@ -1,0 +1,3 @@
+class LifeRing::Topic
+
+end

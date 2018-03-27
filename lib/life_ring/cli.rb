@@ -33,6 +33,8 @@ class LifeRing::CLI
     10. Crisis Pregnancy
 
     DOC
+
+    @hotlines = LifeRing::Topic.hotline_list
   end
 
   def  menu
