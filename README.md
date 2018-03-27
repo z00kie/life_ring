@@ -1,6 +1,6 @@
 # LifeRing
 
-Life Ring is a self-help tool for anyone and everyone to use. With just a few keystrokes you can access a rather extensive database of United States based help hotlines and find support for just about any serious issue you or someone you know may be dealing with. This gem is versatile in that it can be accessed by individuals or tacked on to a program or game that may reference serious issues. 
+Life Ring is a self-help tool for anyone and everyone to use. With just a few keystrokes you can access a rather extensive database of United States based help hotlines and find support for just about any serious issue you or someone you know may be dealing with. This gem is versatile in that it can be accessed by individuals or tacked on to a program or game that may reference serious issues.
 
 ## Installation
 
@@ -30,7 +30,7 @@ To install this gem onto your local machine, run `bundle exec rake install`. To 
 
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/[USERNAME]/life_ring. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](http://contributor-covenant.org) code of conduct.
+Bug reports and pull requests are welcome on GitHub at https://github.com/z00kie/life_ring. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](http://contributor-covenant.org) code of conduct.
 
 ## License
 
