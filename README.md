@@ -1,8 +1,6 @@
 # LifeRing
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/life_ring`. To experiment with that code, run `bin/console` for an interactive prompt.
-
-TODO: Delete this and the text above, and describe your gem
+Life Ring is a self-help tool for anyone and everyone to use. With just a few keystrokes you can access a rather extensive database of United States based help hotlines and find support for just about any serious issue you or someone you know may be dealing with. This gem is versatile in that it can be accessed by individuals or tacked on to a program or game that may reference serious issues. 
 
 ## Installation
 
