@@ -20,7 +20,7 @@ class LifeRing::CLI
   end
 
   def topics
-    @hotlines = LifeRing::Topic.hotline_list
+    @topics = LifeRing::Topic.topics
   end
 
   def  menu

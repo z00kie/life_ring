@@ -1,18 +1,17 @@
 class LifeRing::Topic
+  attr_accessor :name
+  @@all = []
 
-  def self.hotline_list
-    puts <<-DOC
-    1. Abortion
-    2. Abuse
-    3. Addiction
-    4. Cancer
-    5. Care Givers
-    6. Christian Counseling
-    7. Chronic Illness/Pain
-    8. Crisis #'s for Teens under 18
-    9. Crisis #'s for Any Age
-    10. Crisis Pregnancy
+  def self.topics(url="www.pleaselive.org/hotlines")
+    # Scrapes website for data
+    doc = Nokogiri::HTML.css(open(url))
+    # Assigns data to variable(s)
 
-    DOC
+    topic = self.new
+    topic.name = "Hotline 1"
+  end
+
+  def self.all
+    @@all
   end
 end
