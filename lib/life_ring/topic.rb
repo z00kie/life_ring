@@ -6,6 +6,7 @@ class LifeRing::Topic
     # Scrapes website for data
     doc = Nokogiri::HTML.css(open(url))
     # Assigns data to variable(s)
+    binding.pry
 
     topic = self.new
     topic.name = "Hotline 1"

@@ -1,5 +1,12 @@
 class LifeRing::CLI
   def call
+    opening
+    topics
+    menu
+    goodbye
+  end
+
+  def opening
     puts " "
     puts " #       #####   #####   #####"
     puts " #         #     #       #    "
@@ -14,9 +21,6 @@ class LifeRing::CLI
     puts " #    #  #####  #    #  #####"
     puts " "
     puts " What can I help you with today?"
-    topics
-    menu
-    goodbye
   end
 
   def topics
@@ -29,32 +33,11 @@ class LifeRing::CLI
       puts " "
       puts "What can I help you with today? Please enter a menu number to see hotlines, 'menu' for the main menu, or 'exit' to leave."
       puts " "
-
       input = gets.strip.downcase
-      case input
-      when "1"
-        puts " "
-        puts "-----------------"
-        puts " "
-        puts "..ABORTION.."
-        puts " "
-        puts "(###)###-#### - Abortion Group"
-        puts "(###)###-#### - Abortion Support"
-        puts "(###)###-#### - Abortion Society"
-        puts " "
-        puts "-----------------"
-      when "2"
-        puts " "
-        puts "-----------------"
-        puts " "
-        puts "..ABUSE.."
-        puts " "
-        puts "(###)###-#### - Abuse Group"
-        puts "(###)###-#### - Abuse Support"
-        puts "(###)###-#### - Abuse Society"
-        puts " "
-        puts "-----------------"
-      when "menu"
+
+      if input.to_i > 0
+        puts @topics[input.to_i - 1]
+      elsif input == "menu"
         topics
       else
         puts "I'm sorry, I didn't understand. Please type 'menu' or 'exit'."
