@@ -27,6 +27,22 @@ class LifeRing::Scraper
 
     def list_topics
       self.assign_data
+      Topic.all.each.with_index(1) do |topic, index|
+        if topic.name
+          puts "#{index}. #{topic.name}"
+        end
+      end
+    end
+
+    def list_organizations
+      self.assign_data
+      Topic.all.each.with_index(1) do |org|
+        if topic.organization
+          puts "#{org.organization}  ..........  #{org.phone}"
+        end
+      end
+    end
+
 
   def self.all
     @@all
