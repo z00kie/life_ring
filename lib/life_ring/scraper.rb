@@ -6,16 +6,16 @@ class LifeRing::Scraper
     @@all << self
   end
 
-  def grab_page
+  def self.grab_page
     # Scrapes website for data
     doc = Nokogiri::HTML(open("http://www.pleaselive.org/hotlines"))
   end
 
-  def grab_data
+  def self.grab_data
     self.grab_page.css(".vc_row.wpb_row.vc_row-fluid:nth-child(2)")
   end
 
-  def assign_data
+  def self.assign_data
     # Assigns data to variable(s)
       grab_data.each do |post|
         topic = self.new
@@ -24,24 +24,25 @@ class LifeRing::Scraper
         topic.phone = post.css(".blue-text").text
       end
     end
+    #
+    # def self.list_topics
+    #   self.assign_data
+    #   Topic.all.each.with_index(1) do |topic, index|
+    #     if topic.name
+    #       puts "#{index}. #{topic.name}"
+    #       binding.pry
+    #     end
+    #   end
+    # end
 
-    def list_topics
-      self.assign_data
-      Topic.all.each.with_index(1) do |topic, index|
-        if topic.name
-          puts "#{index}. #{topic.name}"
-        end
-      end
-    end
-
-    def list_organizations
-      self.assign_data
-      Topic.all.each.with_index(1) do |org|
-        if topic.organization
-          puts "#{org.organization}  ..........  #{org.phone}"
-        end
-      end
-    end
+    # def self.list_organizations
+    #   self.assign_data
+    #   Topic.all.each.with_index(1) do |org|
+    #     if topic.organization
+    #       puts "#{org.organization}  ..........  #{org.phone}"
+    #     end
+    #   end
+    # end
 
 
   def self.all
