@@ -1,4 +1,4 @@
-class LifeRing::Topic
+class LifeRing::Scraper
   attr_accessor :name
   @@all = []
 
@@ -6,9 +6,12 @@ class LifeRing::Topic
     # Scrapes website for data
     doc = Nokogiri::HTML(open("http://www.pleaselive.org/hotlines"))
     # Assigns data to variable(s)
-    doc.css(".vc_row.wpb_row.vc_row-fluid:nth-child(2)").each.with_index(1) do |title, index|
-      topic = self.new
-      topic.name = title.css(".red-right-border").text
+      doc.css(".vc_row.wpb_row.vc_row-fluid:nth-child(2)").each do |post|
+        topic = self.new
+        heading.title = post.css("h2").text
+        heading.schedule = post.css(".date").text
+        heading.description = post.css("p").text
+      end
 
       puts "#{index}. #{topic.name}"
     end

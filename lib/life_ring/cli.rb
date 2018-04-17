@@ -24,7 +24,7 @@ class LifeRing::CLI
   end
 
   def topics
-    @topics = LifeRing::Topic.topics
+    @topics = LifeRing::Scraper.topics
   end
 
   def  menu
