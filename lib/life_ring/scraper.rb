@@ -17,11 +17,13 @@ class LifeRing::Scraper
 
   def self.assign_data
     # Assigns data to variable(s)
-      grab_data.each do |post|
+      grab_data.each do |section|
+        section.each do |info|
         topic = self.new
-        topic.name = post.css("h2").text
-        topic.organization = post.css(".red-text").text
-        topic.phone = post.css(".blue-text").text
+        topic.name = info.css("h2").text
+        topic.organization = info.css(".red-text").text
+        topic.phone = info.css(".blue-text").text
+        binding.pry
       end
     end
     #

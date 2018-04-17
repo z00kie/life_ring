@@ -55,7 +55,7 @@ class LifeRing::CLI
       if input.to_i > 0
         puts topics[input.to_i - 1]
       elsif input == "menu"
-        topics
+        list_topics
       else
         puts "I'm sorry, I didn't understand. Please type 'menu' or 'exit'."
       end
