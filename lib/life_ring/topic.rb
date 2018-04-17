@@ -8,9 +8,9 @@ class LifeRing::Scraper
     # Assigns data to variable(s)
       doc.css(".vc_row.wpb_row.vc_row-fluid:nth-child(2)").each do |post|
         topic = self.new
-        heading.title = post.css("h2").text
-        heading.schedule = post.css(".date").text
-        heading.description = post.css("p").text
+        topic.title = post.css("h2").text
+        topic.schedule = post.css(".date").text
+        topic.description = post.css("p").text
       end
 
       puts "#{index}. #{topic.name}"
