@@ -24,7 +24,7 @@ class LifeRing::CLI
   end
 
   def topics
-    @topics = LifeRing::Scraper.topics
+    @topics = LifeRing::Scraper.list_topics
   end
 
   def  menu
@@ -36,7 +36,7 @@ class LifeRing::CLI
       input = gets.strip.downcase
 
       if input.to_i > 0
-        puts @topics[input.to_i - 1]
+        puts topics[input.to_i - 1]
       elsif input == "menu"
         topics
       else
