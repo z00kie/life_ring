@@ -25,6 +25,9 @@ class LifeRing::Scraper
       end
     end
 
+    def list_topics
+      self.assign_data
+
   def self.all
     @@all
   end
