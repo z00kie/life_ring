@@ -17,7 +17,7 @@ class LifeRing::Scraper
 
   def assign_data
     # Assigns data to variable(s)
-      .each do |post|
+      grab_data.each do |post|
         topic = self.new
         topic.name = post.css("h2").text
         topic.organization = post.css(".red-text").text
