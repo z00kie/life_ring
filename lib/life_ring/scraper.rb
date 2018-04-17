@@ -18,10 +18,6 @@ class LifeRing::Scraper
       end
     end
 
-    topic = self.new
-    topic.name = "Hotline 1"
-  end
-
   def self.all
     @@all
   end
