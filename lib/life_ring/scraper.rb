@@ -1,10 +1,6 @@
 class LifeRing::Scraper
   attr_accessor :name, :organization, :phone
-  @@all = []
 
-  def initialize
-    @@all << self
-  end
 
   def self.grab_page
     # Scrapes website for data
@@ -17,13 +13,11 @@ class LifeRing::Scraper
 
   def self.assign_data
     # Assigns data to variable(s)
-      grab_data.each do |section|
-        section.each do |info|
+      self.grab_data.each do |info|
         topic = self.new
         topic.name = info.css("h2").text
         topic.organization = info.css(".red-text").text
         topic.phone = info.css(".blue-text").text
-        binding.pry
       end
     end
     #
