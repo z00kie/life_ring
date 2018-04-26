@@ -25,22 +25,27 @@ class LifeRing::CLI
 
 
       def list_topics
-        LifeRing::Scraper.assign_data
-        Topic.all.each.with_index(1) do |topic, index|
-          if topic.name
-            puts "#{index}. #{topic.name}"
-            binding.pry
-          end
-        end
+        puts "1. Abortion"
+        puts "2. Abuse"
+        # LifeRing::Scraper.assign_data
+        # Topic.all.each.with_index(1) do |topic, index|
+        #   if topic.name
+        #     puts "#{index}. #{topic.name}"
+        #     binding.pry
+        #   end
+        # end
       end
 
       def list_organizations
-        LifeRing::Scraper.assign_data
-        Topic.all.each.with_index(1) do |org|
-          if topic.organization
-            puts "#{org.organization}  ..........  #{org.phone}"
-          end
-        end
+        puts "National Domestic Violence Hotline 1-800-799-SAFE"
+        puts "Post Abortion Counseling 1-800-228-0332"
+        puts "Post Abortion Project Rachel 1-800-5WE-CARE"
+        # LifeRing::Scraper.assign_data
+        # Topic.all.each.with_index(1) do |org|
+        #   if topic.organization
+        #     puts "#{org.organization}  ..........  #{org.phone}"
+        #   end
+        # end
       end
 
 
@@ -53,7 +58,7 @@ class LifeRing::CLI
       input = gets.strip.downcase
 
       if input.to_i > 0
-        puts topics[input.to_i - 1]
+        puts list_topics[input.to_i - 1]
       elsif input == "menu"
         list_topics
       else
