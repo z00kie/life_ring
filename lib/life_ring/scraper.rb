@@ -5,16 +5,14 @@ class LifeRing::Scraper
   def self.grab_page
     # Scrapes website for data
     @doc = Nokogiri::HTML(open("https://suicidepreventionlifeline.org"))
-    binding.pry
     @doc
   end
 
   def self.main_menu_info
-      grab_page.css("div.im-struggling-grid.button").collect do |info|
+      grab_page.css("div.im-struggling-grid").collect do |info|
         @topic = Topic.new
-        @topic.name = info.css("p").text
-        @topic.url = info.css("href")
-        binding.pry
+        @topic.name = info.css("span.button--struggle__text").text
+        @topic.url = info.css("a.button href").text
       end
     end
     #
