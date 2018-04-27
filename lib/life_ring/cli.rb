@@ -1,9 +1,8 @@
 class LifeRing::CLI
-  attr_accessor :topic, :name, :url, :intro
+  attr_accessor :topic, :name, :url
 
   def call
     LifeRing::Scraper.main_menu_info
-    binding.pry
     opening
     list_topics
     menu
@@ -28,10 +27,8 @@ class LifeRing::CLI
 
 
       def list_topics
-        Topic.all.each_with_index do |topic, index|
-          if topic.name
-            puts "#{index + 1}. #{topic.name}"
-          end
+        Topic.all.each do |topic|
+          puts "#{topic.name}"
         end
       end
       #
