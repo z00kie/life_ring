@@ -1,5 +1,5 @@
 class LifeRing::Scraper
-  attr_accessor :name, :organization, :phone
+  attr_accessor :name, :url, :phone
 
 
   def self.grab_page
@@ -8,12 +8,12 @@ class LifeRing::Scraper
     @doc
   end
 
-  def self.make_topics
-      grab_page.css("div.red-right-border").collect do |info|
-        topic = Topic.new
-        topic.name = info.css("h2").text
-        topic.organization = info.css(".red-text").text
-        topic.phone = info.css(".blue-text").text
+  def self.main_menu_info
+      grab_page.css("div.im-struggling-grid.button").collect do |info|
+        @topic = Topic.new
+        @topic.name = info.css("p").text
+        @topic.url = info.css("href")
+        @topic.intro = info.css("grid.large.margin-bottom p")
         binding.pry
       end
     end
