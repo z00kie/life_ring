@@ -4,18 +4,18 @@ class LifeRing::Scraper
 
   def self.grab_page
     # Scrapes website for data
-    @doc = Nokogiri::HTML(open("http://www.pleaselive.org/hotlines"))
+    @doc = Nokogiri::HTML(open("https://suicidepreventionlifeline.org"))
     @doc
   end
 
   def self.make_topics
-    grab_page.css(".vc_row.wpb_row.vc_row-fluid:nth-child(2)").collect do |info|
-      topic = Topic.new
-      topic.name = info.css("h2").text
-      topic.organization = info.css(".red-text").text
-      topic.phone = info.css(".blue-text").text
-      binding.pry
-    end
+      grab_page.css("div.red-right-border").collect do |info|
+        topic = Topic.new
+        topic.name = info.css("h2").text
+        topic.organization = info.css(".red-text").text
+        topic.phone = info.css(".blue-text").text
+        binding.pry
+      end
     end
 
     #
