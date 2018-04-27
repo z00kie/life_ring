@@ -10,14 +10,13 @@ class LifeRing::Scraper
         topic.name = info.css("h2").text
         topic.organization = info.css(".red-text").text
         topic.phone = info.css(".blue-text").text
+        binding.pry
       end
     end
 
 
   def self.assign_data
     # Assigns data to variable(s)
-      self.grab_data.each do |info|
-        topic = self.new
 
     end
     #

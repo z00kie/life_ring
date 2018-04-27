@@ -1,6 +1,6 @@
 class LifeRing::CLI
   def call
-    LifeRing::Scraper.grab_data
+    LifeRing::Scraper.new
     opening
     list_topics
     menu
@@ -21,12 +21,10 @@ class LifeRing::CLI
     puts " #   #     #    #   ##  #   #"
     puts " #    #  #####  #    #  #####"
     puts " "
-    puts " What can I help you with today?"
   end
 
 
       def list_topics
-        LifeRing::Scraper.assign_data
         Topic.all.each.with_index(1) do |topic, index|
           if topic.name
             puts "#{index}. #{topic.name}"
@@ -34,15 +32,15 @@ class LifeRing::CLI
           end
         end
       end
-
-      def list_organizations
-        LifeRing::Scraper.assign_data
-        Topic.all.each.with_index(1) do |org|
-          if topic.organization
-            puts "#{org.organization}  ..........  #{org.phone}"
-          end
-        end
-      end
+      #
+      # def list_organizations
+      #   LifeRing::Scraper.assign_data
+      #   Topic.all.each.with_index(1) do |org|
+      #     if topic.organization
+      #       puts "#{org.organization}  ..........  #{org.phone}"
+      #     end
+      #   end
+      # end
 
 
   def  menu
