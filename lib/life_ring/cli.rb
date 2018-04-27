@@ -1,7 +1,9 @@
 class LifeRing::CLI
-  attr_accessor :topic, :organization, :phone
+  attr_accessor :topic, :name, :url, :intro
+
   def call
-    LifeRing::Scraper.make_topics
+    LifeRing::Scraper.main_menu_info
+    binding.pry
     opening
     list_topics
     menu

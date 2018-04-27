@@ -1,10 +1,11 @@
 class LifeRing::Scraper
-  attr_accessor :name, :url, :phone
+  attr_accessor :name, :url, :intro
 
 
   def self.grab_page
     # Scrapes website for data
     @doc = Nokogiri::HTML(open("https://suicidepreventionlifeline.org"))
+    binding.pry
     @doc
   end
 
@@ -13,11 +14,9 @@ class LifeRing::Scraper
         @topic = Topic.new
         @topic.name = info.css("p").text
         @topic.url = info.css("href")
-        @topic.intro = info.css("grid.large.margin-bottom p")
         binding.pry
       end
     end
-
     #
     # def self.list_topics
     #   self.assign_data

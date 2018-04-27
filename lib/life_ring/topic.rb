@@ -1,5 +1,5 @@
 class Topic
-  attr_accessor :name, :organization, :phone
+  attr_accessor :name, :url, :info
 
   @@all = []
 
