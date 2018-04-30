@@ -27,29 +27,25 @@ class LifeRing::CLI
   end
 
 
-      def list_topics
-        Topic.all.each.with_index(1) do |topic, index|
-          puts "#{index}. #{topic.name}"
-        end
-      end
-      #
-      # def list_organizations
-      #   LifeRing::Scraper.assign_data
-      #   Topic.all.each.with_index(1) do |org|
-      #     if topic.organization
-      #       puts "#{org.organization}  ..........  #{org.phone}"
-      #     end
-      #   end
-      # end
+  def list_topics
+    Topic.all.each.with_index(1) do |topic, index|
+      puts "#{index}. #{topic.name}"
+    end
+  end
 
+  def topic_sections
+    Section.all.each.with_index(1) do |title, index|
+      puts "#{index}. #{title.name}"
+    end
+  end
 
   def  menu
-    puts "Please enter the number of your selection:"
     input = nil
     while input != "exit"
+      puts "Please enter the number of your selection:"
       input = gets.strip.downcase
       if input.to_i > 0
-        binding.pry
+        topic_sections
       elsif input == "menu"
         list_topics
       end

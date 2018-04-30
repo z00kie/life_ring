@@ -16,6 +16,13 @@ class LifeRing::Scraper
       end
     end
 
+    def self.topic_menu
+      @topic.url.css("main.main").collect do |info|
+        @section = Section.new
+        @section.name = info.css("h3").text
+      end
+    end
+
   def self.all
     @@all
   end
