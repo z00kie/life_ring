@@ -1,10 +1,11 @@
 class Topic
-  attr_accessor :name, :url
+  attr_accessor :name, :url, :topic
 
   @@all = []
 
   def initialize
     @@all << self
+    @topic = topic
   end
 
   def self.all

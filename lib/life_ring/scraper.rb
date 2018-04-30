@@ -12,29 +12,9 @@ class LifeRing::Scraper
       grab_page.css("div.im-struggling-grid a.button--struggle").collect do |info|
         @topic = Topic.new
         @topic.name = info.css("span.button--struggle__text").text
-        @topic.url = info.css("a")
+        @topic.url = info.attr("href")
       end
     end
-    #
-    # def self.list_topics
-    #   self.assign_data
-    #   Topic.all.each.with_index(1) do |topic, index|
-    #     if topic.name
-    #       puts "#{index}. #{topic.name}"
-    #       binding.pry
-    #     end
-    #   end
-    # end
-
-    # def self.list_organizations
-    #   self.assign_data
-    #   Topic.all.each.with_index(1) do |org|
-    #     if topic.organization
-    #       puts "#{org.organization}  ..........  #{org.phone}"
-    #     end
-    #   end
-    # end
-
 
   def self.all
     @@all

@@ -1,6 +1,7 @@
 class LifeRing::CLI
   attr_accessor :topic, :name, :url
 
+
   def call
     LifeRing::Scraper.main_menu_info
     opening
@@ -48,7 +49,7 @@ class LifeRing::CLI
     while input != "exit"
       input = gets.strip.downcase
       if input.to_i > 0
-        puts @topic[input.to_i-1]
+        binding.pry
       elsif input == "menu"
         list_topics
       end
