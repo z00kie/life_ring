@@ -43,7 +43,16 @@ class LifeRing::CLI
 
 
   def  menu
-
+    puts "Please enter the number of your selection:"
+    input = nil
+    while input != "exit"
+      input = gets.strip.downcase
+      if input.to_i > 0
+        puts @topic[input.to_i-1]
+      elsif input == "menu"
+        list_topics
+      end
+    end
   end
 
   def goodbye
