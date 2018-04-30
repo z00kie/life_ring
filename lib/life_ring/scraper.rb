@@ -13,7 +13,6 @@ class LifeRing::Scraper
         @topic = Topic.new
         @topic.name = info.css("span.button--struggle__text").text
         @topic.url = info.css("a")
-        binding.pry
       end
     end
     #

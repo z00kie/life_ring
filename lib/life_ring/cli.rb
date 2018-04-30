@@ -27,8 +27,8 @@ class LifeRing::CLI
 
 
       def list_topics
-        Topic.all.each do |topic|
-          puts "#{topic.name}"
+        Topic.all.each.with_index(1) do |topic, index|
+          puts "#{index}. #{topic.name}"
         end
       end
       #
