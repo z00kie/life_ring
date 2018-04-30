@@ -43,21 +43,7 @@ class LifeRing::CLI
 
 
   def  menu
-    input = nil
-    while input != "exit"
-      puts " "
-      puts "What can I help you with today? Please enter a menu number to see hotlines, 'menu' for the main menu, or 'exit' to leave."
-      puts " "
-      input = gets.strip.downcase
 
-      if input.to_i >= 1
-        puts list_topics[input.to_i - 1]
-      elsif input == "menu"
-        list_topics
-      else
-        puts "I'm sorry, I didn't understand. Please type 'menu' or 'exit'."
-      end
-    end
   end
 
   def goodbye
