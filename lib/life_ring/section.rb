@@ -1,11 +1,13 @@
-class LifeRing::Section
-  attr_accessor
+class Section
+  attr_accessor :section, :name, :data
 
   @@all = []
 
   def initialize
     @@all << self
     @section = section
+    @data = data
+    @name = name
   end
 
   def self.all

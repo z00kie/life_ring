@@ -1,5 +1,5 @@
 class LifeRing::Scraper
-  attr_accessor :name, :url, :topic
+  attr_accessor :name, :url, :topic, :section
 
 
   def self.grab_page
@@ -16,12 +16,14 @@ class LifeRing::Scraper
       end
     end
 
-    def self.topic_menu
-      @topic.url.css("main.main").collect do |info|
-        @section = Section.new
-        @section.name = info.css("h3").text
-      end
+  def self.topic_details
+    @details = Nokogiri::HTML(open(@topic.url))
+    @details.css("main.main").collect do |info|
+      @section = Section.new
+      @section.name = info.css("h3").text
+      @section.data = info.css("div.js-box-group").text
     end
+  end
 
   def self.all
     @@all
