@@ -9,7 +9,7 @@ class LifeRing::Scraper
   end
 
   def self.main_menu_info
-      grab_page.css("div.im-struggling-grid a.button--struggle").collect do |info|
+      grab_page.css("div.im-struggling-grid a.button--struggle").each do |info|
         @topic = Topic.new(info.attr("href"))
         @topic.name = info.css("span.button--struggle__text").text
         # @topic.url = info.attr("href")
@@ -18,7 +18,7 @@ class LifeRing::Scraper
 
   def self.page_menu(topic)
         @details = Nokogiri::HTML(open(topic.url))
-        @details.css("main.main").collect do |info|
+        @details.css("main.main").each do |info|
           topic.summary = info.css("div.intro").text
         end
       end
