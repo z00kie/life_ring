@@ -34,8 +34,10 @@ class LifeRing::CLI
 
   def topic_sections(topic)
     LifeRing::Scraper.page_menu(topic)
-    Topic.all.each.with_index(1) do |title, index|
-      puts "#{index}. #{title.name}"
+    Topic.all.each do |section|
+      puts "#{section.name}"
+      puts "*************************"
+      puts "#{section.summary}"
     end
   end
 
@@ -49,6 +51,7 @@ class LifeRing::CLI
         list_topics
       elsif input.to_i > 0
         topic_sections(topic)
+        binding.pry
       end
     end
   end
