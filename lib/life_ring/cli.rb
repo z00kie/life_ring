@@ -25,7 +25,6 @@ class LifeRing::CLI
     puts " "
   end
 
-
   def list_topics
     LifeRing::Scraper.main_menu_info
     Topic.all.each.with_index(1) do |topic, index|
@@ -33,9 +32,9 @@ class LifeRing::CLI
     end
   end
 
-  def topic_sections
-    LifeRing::Scraper.topic_details
-    Section.all.each.with_index(1) do |title, index|
+  def topic_sections(topic)
+    LifeRing::Scraper.page_menu(topic)
+    Topic.all.each.with_index(1) do |title, index|
       puts "#{index}. #{title.name}"
     end
   end
@@ -45,8 +44,9 @@ class LifeRing::CLI
     while input != "exit"
       puts "Please enter the number of your selection:"
       input = gets.strip.downcase
+      topic = Topic.all[input.to_i - 1]
       if input.to_i > 0
-        topic_sections
+        topic_sections(topic)
       elsif input == "menu"
         list_topics
       end

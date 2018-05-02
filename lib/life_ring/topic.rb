@@ -1,11 +1,11 @@
 class Topic
-  attr_accessor :name, :url, :topic
-
+  attr_accessor :name, :summary, :title
+  attr_reader :url
   @@all = []
 
-  def initialize
+  def initialize(url)
+    @url = url
     @@all << self
-    @topic = topic
   end
 
   def self.all
