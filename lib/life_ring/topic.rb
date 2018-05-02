@@ -1,5 +1,5 @@
 class Topic
-  attr_accessor :name, :summary, :title
+  attr_accessor :name, :summary
   attr_reader :url
   @@all = []
 

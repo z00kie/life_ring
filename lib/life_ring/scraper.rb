@@ -1,5 +1,5 @@
 class LifeRing::Scraper
-  attr_accessor :name, :url, :topic, :section, :title, :data
+  attr_accessor :name, :url, :topic, :section
 
 
   def self.grab_page
@@ -20,8 +20,6 @@ class LifeRing::Scraper
         @details = Nokogiri::HTML(open(topic.url))
         @details.css("main.main").collect do |info|
           topic.summary = info.css("div.intro").text
-          topic.title = info.css("h3").text
-          binding.pry
         end
       end
     end

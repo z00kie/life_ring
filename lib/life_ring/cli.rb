@@ -42,13 +42,13 @@ class LifeRing::CLI
   def  menu
     input = nil
     while input != "exit"
-      puts "Please enter the number of your selection:"
+      puts "Please enter the number of your selection or 'exit' to leave."
       input = gets.strip.downcase
       topic = Topic.all[input.to_i - 1]
-      if input.to_i > 0
-        topic_sections(topic)
-      elsif input == "menu"
+      if input == "menu"
         list_topics
+      elsif input.to_i > 0
+        topic_sections(topic)
       end
     end
   end
