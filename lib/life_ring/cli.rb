@@ -57,18 +57,18 @@ class LifeRing::CLI
     input = nil
     list_topics
     puts "Enter a number to see more information, or type 'menu' to see the menu or 'exit' to leave."
-    input = gets.strip.upcase
+    input = gets.strip.downcase
     if input == "exit"
       goodbye
     else
       topic = LifeRing::Topic.all[input.to_i - 1]
       selection = input.to_i
-      if selection != 0
+      if selection.between?(1, 9)
         user_input = LifeRing::Topic.find(input)
-        topic_sections(user_input)
+        topic_sections(topic)
         puts "Would you like to learn more about another topic? Y/N"
-        again = gets.strip.upcase
-        if again == "Y" || again == "YES"
+        again = gets.strip.downcase
+        if again == "y" || again == "yes"
           menu
         else
           goodbye
