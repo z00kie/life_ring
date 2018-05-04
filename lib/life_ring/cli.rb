@@ -34,7 +34,7 @@ class LifeRing::CLI
     puts " "
     puts "We can all help prevent suicide. The Lifeline provides 24/7, free and confidential support for people in distress, prevention and crisis resources for you or your loved ones, and best practices for professionals."
     puts " "
-    puts "1(800)273-8255"
+    puts "For help, call 1(800)273-8255"
     puts " "
   end
 
@@ -50,6 +50,8 @@ class LifeRing::CLI
     puts "#{topic.name}"
     puts ""
     puts "#{topic.summary}"
+    puts ""
+    puts "Please call #{topic.contact}"
     puts ""
   end
 
@@ -67,6 +69,10 @@ class LifeRing::CLI
         topic_sections(topic)
       end
     end
+  end
+
+  def find_selection(input)
+    list_topics.detect { |item, index| item.index + 1 = input }
   end
 
   def goodbye
