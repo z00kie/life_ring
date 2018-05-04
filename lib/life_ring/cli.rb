@@ -7,7 +7,6 @@ class LifeRing::CLI
     LifeRing::Scraper.main_menu_info
     hotline
     menu
-    goodbye
   end
 
   def opening
@@ -58,19 +57,18 @@ class LifeRing::CLI
     input = nil
     list_topics
     puts "Enter a number to see more information, or type 'menu' to see the menu or 'exit' to leave."
-    input = gets.strip.downcase
+    input = gets.strip.upcase
     if input == "exit"
       goodbye
     else
       topic = LifeRing::Topic.all[input.to_i - 1]
       selection = input.to_i
-      elsif input.to_i != 0
+      if selection != 0
         user_input = LifeRing::Topic.find(input)
         topic_sections(user_input)
         puts "Would you like to learn more about another topic? Y/N"
         again = gets.strip.upcase
         if again == "Y" || again == "YES"
-          list_topics
           menu
         else
           goodbye
