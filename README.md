@@ -1,6 +1,6 @@
 # LifeRing
 
-Life Ring is a self-help tool for anyone and everyone to use. With just a few keystrokes you can access a rather extensive database of United States based help hotlines and find support for just about any serious issue you or someone you know may be dealing with. This gem is versatile in that it can be accessed by individuals or tacked on to a program or game that may reference serious issues.
+Life Ring is for those who are depressed, suicidal, or dealing with a major loss. Information on various issues relating to suicide, depression, and grief is now at your fingertips! Don't give up, get help.
 
 ## Installation
 
@@ -20,7 +20,7 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+Anyone may use this gem for quick-access to the hotline as well as information about various issues.
 
 ## Development
 

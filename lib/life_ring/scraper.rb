@@ -10,7 +10,7 @@ class LifeRing::Scraper
 
   def self.main_menu_info
       grab_page.css("div.im-struggling-grid a.button--struggle").each do |info|
-        @topic = Topic.new(info.attr("href"))
+        @topic = LifeRing::Topic.new(info.attr("href"))
         @topic.name = info.css("span.button--struggle__text").text
         # @topic.url = info.attr("href")
       end

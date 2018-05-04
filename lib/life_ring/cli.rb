@@ -39,7 +39,7 @@ class LifeRing::CLI
   end
 
   def list_topics
-    Topic.all.each.with_index(1) do |topic, index|
+    LifeRing::Topic.all.collect.with_index(1) do |topic, index|
       puts "#{index}. #{topic.name}"
     end
     puts ""
@@ -57,22 +57,30 @@ class LifeRing::CLI
 
   def  menu
     input = nil
-    while input != "exit"
-      puts "Enter a number to see more information, or type 'menu' to see the menu or 'exit' to leave."
-      input = gets.strip.downcase
-      topic = Topic.all[input.to_i - 1]
+    puts "Enter a number to see more information, or type 'menu' to see the menu or 'exit' to leave."
+    input = gets.strip.downcase
+    topic = LifeRing::Topic.all[input.to_i - 1]
+    if input == "exit"
+      goodbye
+    else
       if input == "menu"
         puts " "
         list_topics
-      elsif input.to_i > 0
-        puts " "
-        topic_sections(topic)
+      elsif input.to_i != 0
+        user_input = LifeRing::Topic.find(input)
+        topic_sections(user_input)
+        puts "Would you like to learn more about another topic? Y/N"
+        again = gets.strip.upcase
+        if again == "Y" || again == "YES"
+          list_topics
+          menu
+        end
+      else
+        puts "Please try again."
+        puts ""
+        menu
       end
     end
-  end
-
-  def find_selection(input)
-    list_topics.detect { |item, index| item.index + 1 = input }
   end
 
   def goodbye
